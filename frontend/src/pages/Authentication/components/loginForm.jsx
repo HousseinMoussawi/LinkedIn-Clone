@@ -1,17 +1,20 @@
-const loginForm = ({ switchHandler,goHome,user,password}) => {
+const LoginForm = ({ switchHandler,goHome,user,password,error}) => {
 
 
   return (
     <div className="flex column center ">
       <h3>Login</h3>
 
-      <input className="" type="text" placeholder="Email or username" value={user}/>
+      <input className="" type="text" placeholder="Email or username" onChange={user}/>
       <input
         className=""
         type="text"
         placeholder="Password"
-        value={password}
+        onChange={password}
       />
+
+        <div>{error}</div>
+
 
       <button
         className=""
@@ -34,4 +37,4 @@ const loginForm = ({ switchHandler,goHome,user,password}) => {
   );
 };
 
-export default loginForm;
+export default LoginForm;

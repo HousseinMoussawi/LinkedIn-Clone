@@ -1,25 +1,24 @@
-const signupFrom = ({ switchHandler ,username,email,password,passwordConfirm,singupButton,error}) => {
+const SignupFrom = ({ switchHandler ,username,email,password,singupButton,error,type}) => {
     return (
       <div className="flex column center full-width login-form">
         <h3>Sign Up</h3>
   
-        <input className="" type="text" placeholder="Username" value={username}/>
-        <input className="" type="text" placeholder="Email"  value = {email}/>
+        <input className="" type="text" placeholder="Username" onChange={username}/>
+        <input className="" type="text" placeholder="Email"  onChange = {email}/>
         <input
           className=""
           type="text"
           placeholder="Password"
-          value={password}
+          onChange={password}
         />
         <input
           className=""
           type="text"
           placeholder="Confirm Password"
-          value={passwordConfirm}
           onChange={checkMatch}
         />
         <label htmlFor="select">Are you a person or a company?</label>
-        <input type="select" id="select">
+        <input type="select" id="select" onChange={type}>
             <option value="user">User</option>
             <option value="admin">Company</option>
         </input>
@@ -50,5 +49,4 @@ const signupFrom = ({ switchHandler ,username,email,password,passwordConfirm,sin
     );
   };
   
-  export default signupFrom;
-  
+  export default SignupFrom;
